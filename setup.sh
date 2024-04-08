@@ -2,7 +2,9 @@
 
 set -xe
 
-apk add git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers
+apk update
+
+apk add git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers alpine-sdk
 
 git clone https://github.com/xmrig/xmrig.git -b $VERSION
 
