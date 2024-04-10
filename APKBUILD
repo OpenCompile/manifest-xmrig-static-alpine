@@ -3,39 +3,31 @@
 pkgname=xmrig
 pkgver=0.4.2
 pkgrel=0
-pkgdesc="C++ implementation of Mustache intended mainly for use as a PHP extension"
-url="https://github.com/jbboehr/libmustache"
+pkgdesc="Cryptocurrency miner for RandomX and Cryptonight algorithms"
+url="https://github.com/xmrig/xmrig"
 arch="x86_64"
 license="GPL-3.0"
 depends=""
 makedepends="git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers"
 subpackages=""
-_mustachespec_rev="b96be9fd4c6d6984828d93169fe7e86d8a8aec2f"
-source="$pkgname-$pkgver.tar.gz::https://github.com/OpenCompile/manifest-$pkgname-alpine-$arch/archive/v$pkgver.tar.gz"
+source="$pkgname-$pkgver.tar.gz::https://github.com/xmrig/xmrig/archive/v$pkgver.tar.gz"
 builddir="$srcdir/$pkgname-$pkgver"
 
 prepare() {
 	default_prepare
-	rm -rf "$builddir"/spec && \
-	mv "$srcdir"/mustache-spec-$_mustachespec_rev "$builddir"/spec
-	cd "$builddir"
-	autoreconf -fvi
+    mkdir $builddir/build
 }
 
 build() {
-	cd "$builddir"
-	./configure \
-		--prefix=/usr \
-        --without-mustache-spec
-	make
-}
+	cd $builddir/scripts
+    ./build_deps.sh && cd ../build
 
-check() {
-	cd "$builddir"
-	make all test install
+    cmake .. -DXMRIG_DEPS=scripts/deps -DBUILD_STATIC=ON
+
+    make -j$(nproc)
 }
 
 package() {
-	cd "$builddir"
+	cd "$builddir"/build
 	make install INSTALL_ROOT="$pkgdir"
 }
