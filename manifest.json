@@ -1,15 +1,11 @@
 {
-    "name":"xmrig"
-    "checkversion":true
+    "name":"xmrig",
+    "checkversion":true,
+
+    "system":"alpine",
 
     "versionapi": {
-        "api":"github"
+        "api":"github",
         "apiversion":"https://api.github.com/repos/xmrig/xmrig/releases/latest"
-    }
-    "scripts":{
-        "setup":"./setup.sh"
-        "build":"./build.sh"
-        "test":"./test.sh"
-        "package":"./package.sh"
     }
 }
