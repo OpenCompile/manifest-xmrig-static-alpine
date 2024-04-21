@@ -1,17 +1,18 @@
 # Maintainer: Daniel Hejduk <danielhejduk@disroot.org>
 
 pkgname=xmrig
-pkgver=0.4.2
+pkgver=6.21.2
 pkgrel=0
 pkgdesc="Cryptocurrency miner for RandomX and Cryptonight algorithms"
 url="https://github.com/xmrig/xmrig"
-arch="x86_64"
+arch="any"
 license="GPL-3.0"
 depends=""
-makedepends="git make cmake libstdc++ gcc g++ automake libtool autoconf linux-headers"
+makedepends="git make cmake libstdc++ gcc automake libtool autoconf linux-headers"
 subpackages=""
 source="$pkgname-$pkgver.tar.gz::https://github.com/xmrig/xmrig/archive/v$pkgver.tar.gz"
 builddir="$srcdir/$pkgname-$pkgver"
+options="!check"
 
 prepare() {
 	default_prepare
@@ -29,5 +30,5 @@ build() {
 
 package() {
 	cd "$builddir"/build
-	make install INSTALL_ROOT="$pkgdir"
+	cp xmrig /usr/local/bin/
 }
