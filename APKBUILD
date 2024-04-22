@@ -30,6 +30,7 @@ build() {
 
 package() {
 	cd "$builddir"/build
+    mkdir -p $pkgdir/usr/local/bin
 	cp xmrig $pkgdir/usr/local/bin/
 }
 
