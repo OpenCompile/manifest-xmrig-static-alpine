@@ -1,7 +1,7 @@
 {
     "name":"xmrig",
     "checkversion":true,
-
+    "repo":"xmrig/xmrig",
     "system":"alpine",
 
     "versionapi": {
