@@ -30,8 +30,8 @@ build() {
 
 package() {
 	cd "$builddir"/build
-    mkdir -p $pkgdir/usr/local/bin
-	cp xmrig $pkgdir/usr/local/bin/
+    mkdir -p $pkgdir/usr/bin
+	cp xmrig $pkgdir/usr/bin/
 }
 
 sha512sums="e6fefa091c5884ebd30a938472032efcf68fccde1ba492bd045dc50fef1ec95bb951bbbf1ed1832670bc241400629754f31318477ae634080a89790e9fa27957 xmrig-6.21.2.tar.gz 
