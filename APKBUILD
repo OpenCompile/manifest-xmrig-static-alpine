@@ -1,6 +1,6 @@
 # Maintainer: Daniel Hejduk <danielhejduk@disroot.org>
 
-pkgname=xmrig
+pkgname=xmrig-static
 pkgver=6.21.2
 pkgrel=0
 pkgdesc="Cryptocurrency miner for RandomX and Cryptonight algorithms"
