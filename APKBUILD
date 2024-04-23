@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hejduk <danielhejduk@disroot.org>
 
 pkgname=xmrig-static
-pkgver=6.21.2
+pkgver=6.21.3
 pkgrel=0
 pkgdesc="Cryptocurrency miner for RandomX and Cryptonight algorithms"
 url="https://github.com/xmrig/xmrig"
@@ -34,5 +34,6 @@ package() {
 	cp xmrig $pkgdir/usr/bin/
 }
 
-sha512sums="e6fefa091c5884ebd30a938472032efcf68fccde1ba492bd045dc50fef1ec95bb951bbbf1ed1832670bc241400629754f31318477ae634080a89790e9fa27957 xmrig-6.21.2.tar.gz 
+sha512sums="
+91e92f61e385b75715b0b00fcb772bf997f3db19ef47f43c4bda3662aec6276273551ac915a7a6eeef253deb8da5b0ec0b45e02f0b84211ab8f0f5a37f34c87e  xmrig-static-6.21.3.tar.gz
 "
